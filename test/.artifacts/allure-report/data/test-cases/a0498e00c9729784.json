@@ -1,0 +1,78 @@
+{
+  "uid" : "a0498e00c9729784",
+  "name" : "User should be able to click Holiday icon",
+  "fullName" : "Work flow for Make my trip.User should be able to click Holiday icon",
+  "historyId" : "eecee9810a69809b54f34004818bb095",
+  "time" : {
+    "start" : 1670236879899,
+    "stop" : 1670236880381,
+    "duration" : 482
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "53d3f2d3ca1ac16e",
+      "name" : "Screenshot",
+      "source" : "53d3f2d3ca1ac16e.png",
+      "type" : "image/png",
+      "size" : 319965
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "Work flow for Make my trip"
+  }, {
+    "name" : "testClass",
+    "value" : "Work flow for Make my trip"
+  }, {
+    "name" : "testMethod",
+    "value" : "User should be able to click Holiday icon"
+  }, {
+    "name" : "package",
+    "value" : "Work flow for Make my trip"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-108.0.5359.72"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "a0498e00c9729784.json",
+  "parameterValues" : [ "chrome-108.0.5359.72" ]
+}

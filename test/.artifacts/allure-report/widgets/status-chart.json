@@ -1,0 +1,21 @@
+[ {
+  "uid" : "4f2a5e581735d8f",
+  "name" : "User should be able to load url",
+  "time" : {
+    "start" : 1670236872697,
+    "stop" : 1670236879898,
+    "duration" : 7201
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a0498e00c9729784",
+  "name" : "User should be able to click Holiday icon",
+  "time" : {
+    "start" : 1670236879899,
+    "stop" : 1670236880381,
+    "duration" : 482
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

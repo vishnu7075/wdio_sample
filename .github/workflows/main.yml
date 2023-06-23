@@ -1,0 +1,41 @@
+
+name: Node.js CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.12.1]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - name: install chromedriver latest version
+      run: npm i chromedriver@109 --save -dev
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: npm run makeMyTrip
+    - name: Install allure commandline
+      if: success() || failure()
+      run: npm i -g allure-commandline
+    - name: Combine Allure
+      if: success() || failure()
+      run: npm run allureCombine
+    - name: Upload test report
+      if: success() || failure()
+      uses: actions/upload-artifact@v2
+      with:
+          name: Allure report
+          path: test/.artifacts/allure-report/complete.html

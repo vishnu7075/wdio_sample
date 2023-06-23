@@ -1,0 +1,43 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Work flow for Make my trip",
+    "children" : [ {
+      "name" : "User should be able to load url",
+      "uid" : "4f2a5e581735d8f",
+      "parentUid" : "1bc46b9c38ba8eccf268430f0c5cd075",
+      "status" : "passed",
+      "time" : {
+        "start" : 1670236872697,
+        "stop" : 1670236879898,
+        "duration" : 7201
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "chrome-108.0.5359.72" ]
+    }, {
+      "name" : "User should be able to click Holiday icon",
+      "uid" : "a0498e00c9729784",
+      "parentUid" : "1bc46b9c38ba8eccf268430f0c5cd075",
+      "status" : "passed",
+      "time" : {
+        "start" : 1670236879899,
+        "stop" : 1670236880381,
+        "duration" : 482
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "chrome-108.0.5359.72" ]
+    } ],
+    "uid" : "1bc46b9c38ba8eccf268430f0c5cd075"
+  } ]
+}

@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Dec 05 16:11:12 IST 2022","Mon Dec 05 16:11:19 IST 2022","7201","","Work flow for Make my trip","","Work flow for Make my trip","User should be able to load url","User should be able to load url",""
+"passed","Mon Dec 05 16:11:19 IST 2022","Mon Dec 05 16:11:20 IST 2022","482","","Work flow for Make my trip","","Work flow for Make my trip","User should be able to click Holiday icon","User should be able to click Holiday icon",""
