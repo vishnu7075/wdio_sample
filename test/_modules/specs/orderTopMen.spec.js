@@ -8,7 +8,7 @@ let mail = `newmail_${Math.floor(Math.random() * 100000)}@mailsac.com`;
 let password = `passkeyw@${Math.floor(Math.random() * 1000000)}`;
 let orderIdArray= [];
 
-xdescribe("Order Men's Jacket", () => {
+describe("Order Men's Jacket", () => {
 	it('Launch URL', async () => {
 		await homePage.launchUrl(testData.url);
     await browser.maximizeWindow();
