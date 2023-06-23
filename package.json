@@ -17,7 +17,7 @@
     },
     "scripts": {
         "chromeDriverUpdate": "npm install chromedriver --chromedriver_version=LATEST",
-        "makeMyTrip": "wdio run wdio.conf.js",
+        "test": "wdio run wdio.conf.js",
         "allureCombine": "node ./node_modules/allure-single-html-file-js/combine.js ./test/.artifacts/allure-report",
         "openReport": "allure open test/.artifacts/allure-report"
     },
