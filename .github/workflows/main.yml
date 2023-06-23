@@ -1,18 +1,12 @@
 name: ui_template
 on:
     workflow_dispatch:
-        inputs:
-            choice:
-                type: choice
-                description: 'Select suite options'
-                options:
-                    - 'full_suite'
 jobs:
     test:
         runs-on: ubuntu-latest
         env:
             JOB_NAME: Test
-        name: ui_framework - ${{ github.event.inputs.choice }}
+        name: ui_test
         steps:
             - uses: actions/checkout@v3
             - name: Use Node.js
@@ -25,12 +19,7 @@ jobs:
             - name: Install Dependencies
               run: npm install
             - name: Execute tests
-              run: |
-                  if [ -n "${{github.event.inputs.choice}}" ]; then
-                  npm run ${{github.event.inputs.choice}}
-                  else
-                  npm run test
-                  fi
+              run: npm run test
             - name: Install Allure CommandLine
               if: always()
               run: npm i -g allure-commandline
