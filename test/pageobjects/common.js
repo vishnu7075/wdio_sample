@@ -1,13 +1,28 @@
 module.exports = class Common {
-  constructor()
-  {
-this.$homePageHeader = () => $(`//div[@class='whiteText makeFlex perfectCenter langSlct']`);
-this.$logo = () => $(`//img[@alt='Make My Trip']`)
-  }
-  async openUrl()
-  {
-    await browser.url(`https://www.testingmavens.com/`);
-    await browser.maximizeWindow();
-   //await this.$homePageHeader().waitForDisplayed(10000,true,'Home pahe header is not displayed');
-  }
-}
+	/**
+	 * Opening Url
+	 * @param {string} url
+	 */
+	async launchUrl(url) {
+		await browser.url(url);
+		await browser.maximizeWindow();
+	}
+
+	async waitForLoad($locator) {
+		await $locator.waitForDisplayed({timeout: 35000});
+		await browser.pause(200);
+	}
+	async click($locator) {
+		await this.waitForLoad($locator);
+		await $locator.click();
+	}
+
+	async setupValue($locator, value) {
+		await this.waitForLoad($locator);
+		await $locator.setValue(value);
+	}
+	async setupByAttribute($locator, attribute, value) {
+		await this.waitForLoad($locator);
+		await $locator.selectByAttribute(attribute, value);
+	}
+};
