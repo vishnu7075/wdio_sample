@@ -1,43 +1,43 @@
 name: ui_template
 on:
-    workflow_dispatch:
-        inputs:
-            choice:
-                type: choice
-                description: 'Select suite options'
-                options:
-                    - 'full_suite'
+  workflow_dispatch:
+    inputs:
+      choice:
+        type: choice
+        description: 'Select suite options'
+        options:
+          - 'full_suite'
 
 jobs:
-    test:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-            - name: Use Node.js
-              uses: actions/setup-node@v3
-              with:
-                  node-version: 18.12.1
-                  cache: npm
-            - name: Checkout code
-              uses: actions/checkout@v2
-            - name: Install Dependencies
-              run: npm install
-            - name: Execute tests
-              run: |
-                  if [ -n "${{github.event.inputs.choice}}" ]; then
-                  npm run ${{github.event.inputs.choice}}
-                  else
-                  npm run test
-                  fi
-            - name: Install Allure CommandLine
-              if: always()
-              run: npm i -g allure-commandline
-            - name: Combine Allure
-              if: always()
-              run: npm run allureCombine
-            - name: Upload Test Report
-              if: always()
-              uses: actions/upload-artifact@v2
-              with:
-                  name: Allure report
-                  path: test/.artifacts/allure-report/complete.html
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.12.1
+          cache: npm
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: npm install
+      - name: Execute tests
+        run: |
+          if [ -n "${{github.event.inputs.choice}}" ]; then
+            npm run ${{github.event.inputs.choice}}
+          else
+            npm run test
+          fi
+      - name: Install Allure CommandLine
+        if: always()
+        run: npm i -g allure-commandline
+      - name: Combine Allure
+        if: always()
+        run: npm run allureCombine
+      - name: Upload Test Report
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: Allure report
+          path: test/.artifacts/allure-report/complete.html
