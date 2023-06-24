@@ -11,9 +11,6 @@ on:
 jobs:
     test:
         runs-on: ubuntu-latest
-        env:
-            JOB_NAME: Test
-        name: ui_framework - ${{ github.event.inputs.choice }}
         steps:
             - uses: actions/checkout@v3
             - name: Use Node.js
