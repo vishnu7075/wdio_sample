@@ -23,7 +23,7 @@ jobs:
             - name: Install Dependencies
               run: npm install
             - name: Execute tests
-              run: npm run testEdge
+              run: npm run test
             - name: Install Allure CommandLine
               if: always()
               run: npm i -g allure-commandline
