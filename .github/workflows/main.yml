@@ -7,10 +7,12 @@ on:
                 description: 'Select suite options'
                 options:
                     - 'full_suite'
-
 jobs:
     test:
         runs-on: ubuntu-latest
+        env:
+            JOB_NAME: Test
+        name: ui_framework - ${{ github.event.inputs.choice }}
         steps:
             - uses: actions/checkout@v3
             - name: Use Node.js
@@ -20,12 +22,15 @@ jobs:
                   cache: npm
             - name: Checkout code
               uses: actions/checkout@v2
-            - name: install chromedriver latest version
-              run: npm i chromedriver@113 --save-dev
             - name: Install Dependencies
               run: npm install
             - name: Execute tests
-              run: npm run test
+              run: |
+                  if [ -n "${{github.event.inputs.choice}}" ]; then
+                  npm run ${{github.event.inputs.choice}}
+                  else
+                  npm run test
+                  fi
             - name: Install Allure CommandLine
               if: always()
               run: npm i -g allure-commandline
