@@ -20,6 +20,8 @@ jobs:
                   cache: npm
             - name: Checkout code
               uses: actions/checkout@v2
+            - name: install chromedriver latest version
+              run: npm i chromedriver@113 --save-dev
             - name: Install Dependencies
               run: npm install
             - name: Execute tests
